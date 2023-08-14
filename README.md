@@ -25,6 +25,7 @@ Nuestro arbol de archivos se ve como sigue:
  ┃ ┣ 📜pruebas_diego.ipynb
  ┃ ┣ 📜pruebas_elias.ipynb
  ┃ ┗ 📜pruebas_romo.ipynb
+ ┃ ┗ 📜pruebas_ana.ipynb
  ┣ 📜.gitignore
  ┗ 📜README.md
 ```
