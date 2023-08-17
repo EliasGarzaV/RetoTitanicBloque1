@@ -2,7 +2,7 @@
 
 ## Links a archivos de los entregables (Las cosas importantes):
 
-- [Entregable 1: 14/08/2023](Pipe/DataCleaning.ipynb) - Limpieza y transformación de datos. Path: `Pipe/DataCleaning.ipynb` 
+- [Entregable 1: 14/08/2023](Pipe/DataCleansing.ipynb) - Limpieza y transformación de datos. Path: `Pipe/DataCleansing.ipynb`. Los resultados de la limpieza se guardan en `Data/train_clean.csv`.
 - [File 2](./path/to/file2.ext) - Description of File 2
 - [File 3](./path/to/file3.ext) - Description of File 3
 
@@ -13,6 +13,7 @@ Nuestro arbol de archivos se ve como sigue:
  ┣ 📂Data
  ┃ ┣ 📜test.csv
  ┃ ┗ 📜train.csv
+ ┃ ┗ 📜train_clean.csv
  ┣ 📂Interface
  ┃ ┗ 📜.gitkeep
  ┣ 📂Model
@@ -20,7 +21,7 @@ Nuestro arbol de archivos se ve como sigue:
  ┣ 📂Pipe
  ┃ ┣ 📜.gitkeep
  ┃ ┣ 📜cleaning_funcs.py
- ┃ ┗ 📜DataCleaning.ipynb  **Primer entregable**
+ ┃ ┗ 📜DataCleansing.ipynb  **Primer entregable**
  ┣ 📂Testing
  ┃ ┣ 📜pruebas_diego.ipynb
  ┃ ┣ 📜pruebas_elias.ipynb
