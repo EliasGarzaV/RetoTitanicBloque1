@@ -4,9 +4,6 @@ path = os.getcwd()
 import numpy as np
 from sklearn.svm import SVC
 
-print(path)
-
-
 train = pd.read_csv(path + '\RetoTitanicBloque1\Data\\train_clean.csv')
 train = train.drop(columns = [train.columns[0]])
 
@@ -29,4 +26,4 @@ classifier = SVC()
 classifier.fit(X_train, y_train)
 prediction = classifier.predict(X_test)
 
-pd.DataFrame({'PassengerId' : idxtest, 'Survived' : prediction}).to_csv('SVM_gender_submission.csv', index = False)
+pd.DataFrame({'PassengerId' : idxtest, 'Survived' : prediction}).to_csv(path + '\RetoTitanicBloque1\Results\SVM_gender_submission.csv', index = False)
