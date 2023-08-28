@@ -1,6 +1,5 @@
 import pandas as pd
 import os
-
 from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
@@ -15,7 +14,7 @@ def titanic_svm(kernelf : str, degreef: int):
     X_train, X_test, y_train, y_test = train_test_split(train.drop(columns='Survived'),
                                                         train['Survived'],
                                                         test_size=0.3,
-                                                        random_state=1,
+                                                        random_state=0,
                                                         shuffle=False)
 
     classifier = SVC(kernel=kernelf, degree = degreef)

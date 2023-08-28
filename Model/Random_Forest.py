@@ -28,7 +28,7 @@ def titanic_rf(dep: int):
     #X_train = train.drop(columns=['Survived'], axis=1)
     #X_test 
     #%%
-    classifier = RandomForestClassifier(max_depth= dep, random_state=1)
+    classifier = RandomForestClassifier(max_depth= dep, random_state=0)
     classifier.fit(X_train, y_train)
     prediction = classifier.predict(X_test)
     acc = accuracy_score(y_test,prediction)

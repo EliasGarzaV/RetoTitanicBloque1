@@ -12,7 +12,7 @@ def titanic_log(dep: int):
     train = train.drop(columns = [train.columns[0]])
     y = train.Survived  
     X  = train.drop(columns = "Survived")
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1, shuffle=False) # 70% training and 30% test
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0, shuffle=False) # 70% training and 30% test
     
     classifier = LogisticRegression(random_state=1, penalty='none') #83.70%
     classifier.fit(X_train, y_train)
