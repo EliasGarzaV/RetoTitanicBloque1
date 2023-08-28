@@ -13,12 +13,6 @@ train = train.drop(columns = [train.columns[0]])
 test = pd.read_csv(path + '\RetoTitanicBloque1\Data\\test.csv')
 idxtest = test['PassengerId']
 
-test['Age'] = test['Age'].fillna(test['Age'].mean())
-test['Fare'] = test['Fare'].fillna(test['Fare'].mean())
-test = pd.get_dummies(test, columns = ['Embarked'])
-test['is_male'] = pd.get_dummies(test['Sex'])['male']
-test = test.drop(columns= ['Cabin', 'PassengerId', 'Ticket', 'Name', 'Sex'])
-
 
 X_train, X_test, y_train, y_test = train_test_split(train.drop(columns='Survived'), train['Survived'], test_size=0.2, random_state=1)
 
