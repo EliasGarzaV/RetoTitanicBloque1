@@ -13,16 +13,7 @@ random.seed(0)
 
 sns.set()
 
-def titanic_gnb():
-    data = pd.read_csv(r'..\Data\\train_clean.csv')
-
-    feature_cols = ['Survived', 'Pclass', 'Age', 'SibSp', 'Parch', 'Fare',
-        'Embarked_C', 'Embarked_Q', 'Embarked_S', 'is_male']
-    X = data.drop(columns = "Survived")
-    y = data.Survived
-
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0, shuffle=False) # 70% training and 30% test
-
+def titanic_gnb(X_train, y_train, X_test, y_test):
     clf = GaussianNB()
     clf.fit(X_train, y_train)
 

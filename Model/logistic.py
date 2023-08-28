@@ -7,14 +7,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 
 
-def titanic_log(dep: int):
-    train = pd.read_csv(r'..\Data\\train_clean.csv')
-    train = train.drop(columns = [train.columns[0]])
-    y = train.Survived  
-    X  = train.drop(columns = "Survived")
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0, shuffle=False) # 70% training and 30% test
-    
-    classifier = LogisticRegression(random_state=1, penalty='none') #83.70%
+def titanic_log(X_train, y_train, X_test, y_test):
+    classifier = LogisticRegression(random_state=1, max_iter=1000, penalty='l2')
     classifier.fit(X_train, y_train)
     prediction = classifier.predict(X_test)
     acc = accuracy_score(y_test,prediction)
