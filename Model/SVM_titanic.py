@@ -12,7 +12,11 @@ def titanic_svm(kernelf : str, degreef: int):
     train = pd.read_csv('..\Data\\train_clean.csv')
     train = train.drop(columns = [train.columns[0]])
 
-    X_train, X_test, y_train, y_test = train_test_split(train.drop(columns='Survived'), train['Survived'], test_size=0.3, random_state=1)
+    X_train, X_test, y_train, y_test = train_test_split(train.drop(columns='Survived'),
+                                                        train['Survived'],
+                                                        test_size=0.3,
+                                                        random_state=1,
+                                                        shuffle=False)
 
     classifier = SVC(kernel=kernelf, degree = degreef)
     classifier.fit(X_train, y_train)

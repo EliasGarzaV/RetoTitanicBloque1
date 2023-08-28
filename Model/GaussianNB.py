@@ -21,7 +21,7 @@ def titanic_gnb():
     X = data.drop(columns = "Survived")
     y = data.Survived
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1) # 70% training and 30% test
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1, shuffle=False) # 70% training and 30% test
 
     clf = GaussianNB()
     clf.fit(X_train, y_train)
