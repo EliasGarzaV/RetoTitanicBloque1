@@ -4,12 +4,13 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
-
+import random
+random.seed(0)
 
 def titanic_rf(dep: int):
     train = pd.read_csv(r'..\Data\\train_clean.csv')
     train = train.drop(columns = [train.columns[0]])
-    y = train.Survived
+    y = train.Survived  
     X  = train.drop(columns = "Survived")
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1) # 70% training and 30% test
 
@@ -27,7 +28,7 @@ def titanic_rf(dep: int):
     #X_train = train.drop(columns=['Survived'], axis=1)
     #X_test 
     #%%
-    classifier = RandomForestClassifier(max_depth= dep)
+    classifier = RandomForestClassifier(max_depth= dep, random_state=1)
     classifier.fit(X_train, y_train)
     prediction = classifier.predict(X_test)
     acc = accuracy_score(y_test,prediction)

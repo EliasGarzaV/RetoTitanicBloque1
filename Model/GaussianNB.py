@@ -8,6 +8,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 path = os.getcwd()
+import random
+random.seed(0)
 
 sns.set()
 

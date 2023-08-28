@@ -5,6 +5,8 @@ from sklearn.svm import SVC
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 path = os.getcwd()
+import random
+random.seed(0)
 
 def titanic_svm(kernelf : str, degreef: int):
     train = pd.read_csv('..\Data\\train_clean.csv')
