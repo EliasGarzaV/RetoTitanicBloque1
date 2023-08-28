@@ -4,43 +4,31 @@ import pandas as pd
 import re
 from io import StringIO
 import sys
-sys.path.append("../")
-from tools.Pipes.text_transform import *
+
 
 st.set_page_config(
     page_title="Titanic Survivor",
-    page_icon= Image.open('figures\LogoChat_Stats.png')
+    page_icon= Image.open('figures\logo.png')
 )
 
-st.image('figures\LogoChat_Stats.png', width= 200)
+col1, col2 = st.columns([1,2])  # You can adjust the number of columns as needed
 
-st.header("Supervivencia de Titanic ")
+with col1:
+    st.image('figures\logo.png', width= 200)
+
+with col2:
+    st.header("Supervivencia de Titanic ")
+    
 st.subheader('Hola')
 
 st.write()
 st.info(
     """
-    __Chat Stats__ helps you find insights of your whatsapp groups and contacts. 
+    This app helps you find out if a profile would have survived the Titanic disaster. 
     """
 )
 
 
-@st.cache_data
-def load(text) -> pd.DataFrame:
-    """Translates a .txt file that comes from a whatsapp export to a pandas Dataframe"""
 
-    text = StringIO(chat_file.getvalue().decode('utf-8')).read()
-    
-    return str_to_df(text)
-
-label = 'To start, please upload the exported .txt file of the exported chat. You can get it from your phone in the Whatsapp app.'
-chat_file = st.file_uploader(label, type='txt', accept_multiple_files=False,
-                key=None, help=None, on_change=None, args=None,
-                kwargs=None, disabled=False, label_visibility="visible")
-
-if(chat_file is not None):
-    st.session_state['chat'] = load(chat_file)
-    st.write(st.session_state['chat'])
-    
 
     
