@@ -5,6 +5,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, confusion_matrix, classification_report
 import random
+import pickle
 random.seed(0)
 
 def titanic_rf(dep: int, X_train, y_train, X_test, y_test):
@@ -23,3 +24,24 @@ def titanic_rf(dep: int, X_train, y_train, X_test, y_test):
     return acc, matrix
 
 #pd.DataFrame({'PassengerId' : idxtest, 'Survived' : prediction}).to_csv('..\Results\RandomForest_gender_submission.csv', index = False)
+def serialize_rf(dep: int, X_train, y_train, path):
+
+    classifier = RandomForestClassifier(max_depth= dep, random_state=0)
+    classifier.fit(X_train, y_train)
+    
+    # Serialize the model to a file using pickle
+    with open(path, 'wb') as model_file:
+        pickle.dump(classifier, model_file)
+        
+    return True
+    
+#%%
+train = pd.read_csv(r'..\Data\\train_clean.csv')
+train = train.drop(columns = [train.columns[0]])
+y = train.Survived  
+X  = train.drop(columns = "Survived")
+
+serialize_rf(9, X, y, r'..\Interface\model.pkl')
+    
+    
+# %%
