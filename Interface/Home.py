@@ -53,9 +53,11 @@ with result:
     st.subheader('Resultado:')
     if st.button('Calcular supervivencia'):
         if(model.predict(x)):
-            st.write('Vive')
+            # st.write('Vive')
+            st.image(r'figures\rose.png', width= 300)
         else:
-            st.write('Muere')
+            # st.write('Muere')
+            st.image(r'figures\jack.jpeg', width= 300)
     
 
 
