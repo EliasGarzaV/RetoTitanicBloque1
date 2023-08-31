@@ -57,10 +57,4 @@ with result:
             st.image(r'figures\rose.png', width= 300)
         else:
             # st.write('Muere')
-            st.image(r'figures\jack.jpeg', width= 300)
-    
-
-
-
-
-    
+            st.image(r'figures\JackSwim.gif', width= 300)
