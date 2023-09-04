@@ -23,6 +23,26 @@ def titanic_rf(dep: int, X_train, y_train, X_test, y_test):
             index=['Actual 0', 'Actual 1'])
     return acc, matrix
 
+def titanic_rf_tuned(n_trees, dep: int, crit, X_train, y_train, X_test, y_test):
+
+    classifier = RandomForestClassifier(n_estimators=n_trees,
+                                        max_depth= dep,
+                                        random_state=0,
+                                        criterion=crit,
+                                        min_samples_leaf=5,
+                                        )
+    classifier.fit(X_train, y_train)
+    prediction = classifier.predict(X_test)
+    acc = accuracy_score(y_test,prediction)
+    #acc
+
+    # Create a Confusion Matrix
+    matrix = pd.DataFrame(
+            confusion_matrix(y_test, prediction),
+            columns=['Predicted 0', 'Predicted 1'],
+            index=['Actual 0', 'Actual 1'])
+    return acc, matrix, classifier
+
 #pd.DataFrame({'PassengerId' : idxtest, 'Survived' : prediction}).to_csv('..\Results\RandomForest_gender_submission.csv', index = False)
 def serialize_rf(dep: int, X_train, y_train, path):
 
