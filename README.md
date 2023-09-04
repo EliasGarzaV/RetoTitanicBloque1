@@ -4,7 +4,7 @@
 
 - [Entregable 1: 14/08/2023](Pipe/DataCleansing.ipynb) - Limpieza y transformación de datos. Path: `Pipe/DataCleansing.ipynb`. Los resultados de la limpieza se guardan en `Data/train_clean.csv`.
 - [Entregable 2: 28/08/2023](Model/resultados_modelos.ipynb) - Notebook con las pruebas de modelos hechas y con su comparación. 
-- [Entregable 3: 04/09/2023](Model\ModeloMejorado.ipynb) - Reporte con el modelo refinado.
+- [Entregable 3: 04/09/2023](Model/ModeloMejorado.ipynb) - Reporte con el modelo refinado.
 
 ## ¿Cómo esta organizado nuestro repositorio?
 Nuestro arbol de archivos se ve como sigue:
