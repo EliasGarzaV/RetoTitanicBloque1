@@ -10,15 +10,13 @@ import numpy as np
 
 st.set_page_config(
     page_title="Titanic Survivor",
-    # page_icon= Image.open('figures/logo.png')
+    page_icon= Image.open('Interface/figures/logo.png')
 )
 
 col1, col2 = st.columns([1,2])  # You can adjust the number of columns as needed
 
 with col1:
-    # st.image('figures/logo.png', width= 200)
-    import os
-    st.write(os.getcwd())
+    st.image('Interface/figures/logo.png', width= 200)
 
 with col2:
     st.header("Supervivencia de Titanic ")
@@ -32,7 +30,7 @@ st.info(
 
 @st.cache_data
 def _read_model():
-    with open(r'model.pkl', 'rb') as model_file:
+    with open(r'Interface\model.pkl', 'rb') as model_file:
         return pickle.load(model_file)
 
 model = _read_model()
