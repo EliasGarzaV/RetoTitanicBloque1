@@ -55,7 +55,7 @@ with result:
     if st.button('Calcular supervivencia'):
         if(model.predict(x)):
             # st.write('Vive')
-            st.image(r'figures\rose.png', width= 300)
+            st.image('Interface/figures/rose.png', width= 300)
         else:
             # st.write('Muere')
-            st.image(r'figures\jackWater.jpeg', width= 300)
+            st.image('Interface/figures/jackWater.jpeg', width= 300)
