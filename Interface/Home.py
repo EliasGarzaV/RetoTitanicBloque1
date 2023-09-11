@@ -25,7 +25,7 @@ with col2:
 st.write()
 st.info(
     """
-    This app helps you find out if a profile would have survived the Titanic disaster. 
+    Esta app te ayuda a revisar si es que un cierto perfil de pasajer habría sobrevivido al desastre del titanic. 
     """
 )
 
@@ -54,8 +54,8 @@ with result:
     st.subheader('Resultado:')
     if st.button('Calcular supervivencia'):
         if(model.predict(x)):
-            # st.write('Vive')
+            st.write('Sobrevive')
             st.image('Interface/figures/rose.png', width= 300)
         else:
-            # st.write('Muere')
+            st.write('Fallece')
             st.image('Interface/figures/jackWater.jpeg', width= 300)
