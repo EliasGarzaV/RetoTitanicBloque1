@@ -17,7 +17,8 @@ col1, col2 = st.columns([1,2])  # You can adjust the number of columns as needed
 
 with col1:
     # st.image('figures/logo.png', width= 200)
-    st.write('Hola q ase')
+    import os
+    st.write(os.getcwd())
 
 with col2:
     st.header("Supervivencia de Titanic ")
