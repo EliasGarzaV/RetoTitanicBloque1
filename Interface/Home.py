@@ -6,6 +6,7 @@ from io import StringIO
 import sys
 import pickle
 import numpy as np
+import sklearn
 
 
 st.set_page_config(
