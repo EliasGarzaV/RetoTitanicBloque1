@@ -30,7 +30,7 @@ st.info(
 
 @st.cache_data
 def _read_model():
-    with open(r'Interface\model.pkl', 'rb') as model_file:
+    with open('Interface/model.pkl', 'rb') as model_file:
         return pickle.load(model_file)
 
 model = _read_model()
