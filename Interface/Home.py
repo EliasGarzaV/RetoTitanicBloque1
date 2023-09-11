@@ -10,13 +10,14 @@ import numpy as np
 
 st.set_page_config(
     page_title="Titanic Survivor",
-    page_icon= Image.open('figures/logo.png')
+    # page_icon= Image.open('figures/logo.png')
 )
 
 col1, col2 = st.columns([1,2])  # You can adjust the number of columns as needed
 
 with col1:
-    st.image('figures/logo.png', width= 200)
+    # st.image('figures/logo.png', width= 200)
+    st.write('Hola q ase')
 
 with col2:
     st.header("Supervivencia de Titanic ")
