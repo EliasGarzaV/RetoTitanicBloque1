@@ -6,17 +6,18 @@ from io import StringIO
 import sys
 import pickle
 import numpy as np
+import sklearn
 
 
 st.set_page_config(
     page_title="Titanic Survivor",
-    page_icon= Image.open('figures\logo.png')
+    page_icon= Image.open('Interface/figures/logo.png')
 )
 
 col1, col2 = st.columns([1,2])  # You can adjust the number of columns as needed
 
 with col1:
-    st.image('figures\logo.png', width= 200)
+    st.image('Interface/figures/logo.png', width= 200)
 
 with col2:
     st.header("Supervivencia de Titanic ")
@@ -24,13 +25,13 @@ with col2:
 st.write()
 st.info(
     """
-    This app helps you find out if a profile would have survived the Titanic disaster. 
+    Esta app te ayuda a revisar si es que un cierto perfil de pasajer habría sobrevivido al desastre del titanic. 
     """
 )
 
 @st.cache_data
 def _read_model():
-    with open(r'model.pkl', 'rb') as model_file:
+    with open('Interface/model.pkl', 'rb') as model_file:
         return pickle.load(model_file)
 
 model = _read_model()
@@ -53,8 +54,8 @@ with result:
     st.subheader('Resultado:')
     if st.button('Calcular supervivencia'):
         if(model.predict(x)):
-            # st.write('Vive')
-            st.image(r'figures\rose.png', width= 300)
+            st.write('Sobrevive')
+            st.image('Interface/figures/rose.png', width= 300)
         else:
-            # st.write('Muere')
-            st.image(r'figures\jackWater.jpeg', width= 300)
+            st.write('Fallece')
+            st.image('Interface/figures/jackWater.jpeg', width= 300)
